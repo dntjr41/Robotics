@@ -1,0 +1,91 @@
+//////////////////////// 1번 보드 /////////////////////
+// 1번 보드
+// LCD_1, Sound_1, LED_1, Ultra_1
+#include <LiquidCrystal.h>
+
+#define sound 13
+#define light 8
+
+#define out_1 7
+#define in_1 6
+
+// 보안 시스템을 종료하기 위한 비밀번호 설정
+#define password 1234
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup()
+{  
+  Serial.begin(9600);
+  pinMode(out_1, OUTPUT);
+  pinMode(in_1, INPUT);
+
+  pinMode(sound, OUTPUT);
+  pinMode(light, OUTPUT);
+
+  lcd.begin(16,2);
+  lcd.setCursor(0,0);
+  lcd.print("Security Start");
+}
+
+void loop()
+{
+
+// 초음파 센서 측정 값 입력받기
+digitalWrite(out_1, HIGH);
+delayMicroseconds(50);
+digitalWrite(out_1, LOW);
+int dura_1 = pulseIn(in_1, HIGH);
+float cent_1 = dura_1 / 58.2;
+
+// Serial monitor에 측정 값 표시하기
+Serial.print("cent_1 = ");
+Serial.print(cent_1);
+Serial.print("\n");
+
+// 비밀번호를 입력해 보안 시스템 종료
+Serial.print("Enter password to stop alarm\n"); 
+int pw = Serial.parseInt(); 
+
+// 비밀번호를 입력하면 시스템을 중단했다고 표시
+if (pw == password)
+{
+  lcd.clear();
+  lcd.print("Stop Security"); 
+
+  noTone(sound);
+  digitalWrite(light, LOW);
+
+  delay(10000);
+}
+
+// 계산해보고 특정 값 써주기
+// 물건이 계속 있을 때는
+// light, lcd에 문제 없다 표시
+if(cent_1 < 23) {
+   digitalWrite(light, LOW);
+   noTone(sound);
+
+   lcd.clear();
+   lcd.print("No Problem");
+}
+
+// 문제가 생긴다면
+// 불을 깜빡이고 소리를 지른다
+// lcd에 문제가 생겼다고 표시한다
+else {
+  lcd.clear();
+  lcd.print("Security Problem !");
+
+  digitalWrite(light, HIGH);
+  delay(200);
+  digitalWrite(light, LOW);
+  delay(200);
+
+  tone(sound, 700, 500);
+  delay(300);
+  noTone(sound);
+}
+
+delay(500);
+}

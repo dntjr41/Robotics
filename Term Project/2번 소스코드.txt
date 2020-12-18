@@ -1,0 +1,77 @@
+/////////////////////////// 2번 보드 ///////////////////////
+// 2번 보드
+// Sound_2, LED_2, Ultra_2 
+// lightSen - 오류가 많아서 제거
+// 카메라모듈 이용하려 했지만 오류 문제로 할 수 없었음
+
+#define out_2 7
+#define in_2 6
+// #define light A0
+#define led 2
+#define sound 3
+
+// 보안 시스템을 종료하기 위한 비밀번호 설정
+#define password 1234
+
+void setup() {
+
+  Serial.begin(9600);
+  pinMode(out_2, OUTPUT);
+  pinMode(in_2, INPUT);
+//   pinMode(light, INPUT);
+
+  pinMode(sound, OUTPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+
+// 초음파 센서 측정 값 입력받기  
+digitalWrite(out_2, HIGH);
+delayMicroseconds(50);
+digitalWrite(out_2, LOW);
+int dura_2 = pulseIn(in_2, HIGH);
+float cent_2 = dura_2 / 58.2;
+
+// Serial monitor에 측정 값 표시하기
+Serial.print("cent_2 = ");
+Serial.print(cent_2);
+Serial.print("\n");
+
+// 비밀번호를 입력해 보안 시스템 종료
+Serial.print("Enter password to stop alarm\n"); 
+int pw = Serial.parseInt(); 
+
+// 비밀번호를 입력하면 시스템을 중단했다고 표시
+if (pw == password)
+{
+
+  noTone(sound);
+  digitalWrite(led, LOW);
+
+  delay(10000);
+}
+
+// 계산해보고 특정 값 써주기
+// 물건이 계속 있을 때는
+// light에 문제 없다 표시  
+if(cent_2 < 23) {
+  digitalWrite(led, LOW);
+  noTone(sound);
+}
+
+// 문제가 생긴다면
+// 불을 깜빡이고 소리를 지른다
+else {
+  digitalWrite(led, HIGH);
+  delay(200);
+  digitalWrite(led, LOW);
+  delay(200);
+
+  tone(sound, 600, 500);
+  delay(300);
+  noTone(sound);
+}
+
+delay(500);
+}
