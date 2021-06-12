@@ -17,7 +17,7 @@
 2. Proposed System
 * Image Capture
 * ![2](https://user-images.githubusercontent.com/67234937/121768003-c2488e80-cb96-11eb-9d6f-0ce11081b164.png)
-* ![3 - 2](https://user-images.githubusercontent.com/67234937/121768887-a1cf0300-cb9b-11eb-8390-973e24274e4e.gif)
+* https://user-images.githubusercontent.com/67234937/121768949-f07c9d00-cb9b-11eb-84c8-dba8de1f9d18.mp4
 
 * Block Diagram
 * ![4](https://user-images.githubusercontent.com/67234937/121768057-08055700-cb97-11eb-8190-d3b27ff1c6f8.png)
@@ -60,7 +60,3 @@ The theft prevention system recognizes that the movement of the object is not by
 The alarm sound disappears and the word" Stop security" appears on the lcd board <br>
 
 https://user-images.githubusercontent.com/67234937/121768843-67656600-cb9b-11eb-9e4e-97c59b7f6ea6.mp4
-
-
-
-
