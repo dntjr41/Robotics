@@ -17,7 +17,7 @@
 2. Proposed System
 * Image Capture
 * ![2](https://user-images.githubusercontent.com/67234937/121768003-c2488e80-cb96-11eb-9d6f-0ce11081b164.png)
-* https://user-images.githubusercontent.com/67234937/121768949-f07c9d00-cb9b-11eb-84c8-dba8de1f9d18.mp4
+https://user-images.githubusercontent.com/67234937/121768949-f07c9d00-cb9b-11eb-84c8-dba8de1f9d18.mp4
 
 * Block Diagram
 * ![4](https://user-images.githubusercontent.com/67234937/121768057-08055700-cb97-11eb-8190-d3b27ff1c6f8.png)
