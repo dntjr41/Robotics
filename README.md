@@ -12,7 +12,7 @@
 7. Demo
 ***
 1. Motivation & Goal
-<img width="584" alt="1" src="https://user-images.githubusercontent.com/67234937/121767964-8a414b80-cb96-11eb-9c47-9bc63612268c.PNG">
+* <img width="584" alt="1" src="https://user-images.githubusercontent.com/67234937/121767964-8a414b80-cb96-11eb-9c47-9bc63612268c.PNG">
 
 2. Proposed System
 * Image Capture
@@ -31,11 +31,11 @@
 ***
 
 3. Value of our proposed system
-<img width="586" alt="8" src="https://user-images.githubusercontent.com/67234937/121768285-7eef1f80-cb98-11eb-8063-e31db207991b.PNG">
+* <img width="586" alt="8" src="https://user-images.githubusercontent.com/67234937/121768285-7eef1f80-cb98-11eb-8063-e31db207991b.PNG">
 ***
 
 4. Special points of our proposed system
-<img width="592" alt="9" src="https://user-images.githubusercontent.com/67234937/121768299-8e6e6880-cb98-11eb-9e56-af903e043b39.PNG">
+* <img width="592" alt="9" src="https://user-images.githubusercontent.com/67234937/121768299-8e6e6880-cb98-11eb-9e56-af903e043b39.PNG">
 ***
 
 5. Conclusion and future work
